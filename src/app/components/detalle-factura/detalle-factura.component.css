@@ -2,9 +2,10 @@
 
 .btnAtras {
   border: none;
-  padding: 5px 20px;
   margin-bottom: 10px;
   background-color: transparent;
+  box-shadow: none;
+  padding-left: 0;
 }
 .icono {
   width: 24px;
