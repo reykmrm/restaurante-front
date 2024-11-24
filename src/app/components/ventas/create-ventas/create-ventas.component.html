@@ -1,0 +1,88 @@
+<div class="modal-fondo">
+  <h3 mat-dialog-title class="dialog-title">{{ titulo }}</h3>
+  <hr class="division-line">
+  <div class="importdata">
+
+    <mat-dialog-content>
+      <form [formGroup]="formularioForm">
+
+        <!-- Cliente -->
+        <nz-form-item>
+          <nz-form-label [nzSm]="9" [nzXs]="24" nzFor="cliente" style="text-align: left;">Cliente</nz-form-label>
+          <nz-form-control nzHasFeedback [nzSm]="15" [nzXs]="24" nzErrorTip="Debes seleccionar un cliente">
+            <nz-select
+              nzShowSearch
+              nzAllowClear
+              nzPlaceHolder="Seleccione un cliente"
+              formControlName="idCliente"
+              required>
+              <nz-option *ngFor="let cliente of clientes" [nzLabel]="cliente.nombres" [nzValue]="cliente.identificacion"></nz-option>
+            </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+
+        <!-- Mesa -->
+        <nz-form-item>
+          <nz-form-label [nzSm]="9" [nzXs]="24" nzFor="mesa" style="text-align: left;">Mesa</nz-form-label>
+          <nz-form-control nzHasFeedback [nzSm]="15" [nzXs]="24" nzErrorTip="Debes seleccionar una mesa">
+            <nz-select
+              nzShowSearch
+              nzAllowClear
+              nzPlaceHolder="Seleccione una mesa"
+              formControlName="nroMesa"
+              required>
+              <nz-option *ngFor="let mesa of mesas" [nzLabel]="mesa.nombre" [nzValue]="mesa.nroMesa"></nz-option>
+            </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+
+        <!-- Mesero -->
+        <nz-form-item>
+          <nz-form-label [nzSm]="9" [nzXs]="24" nzFor="mesero" style="text-align: left;">Mesero</nz-form-label>
+          <nz-form-control nzHasFeedback [nzSm]="15" [nzXs]="24" nzErrorTip="Debes seleccionar un mesero">
+            <nz-select
+              nzShowSearch
+              nzAllowClear
+              nzPlaceHolder="Seleccione un mesero"
+              formControlName="idMesero"
+              required>
+              <nz-option *ngFor="let mesero of meseros" [nzLabel]="mesero.nombres" [nzValue]="mesero.idMesero"></nz-option>
+            </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+
+        <!-- Número de Factura -->
+        <nz-form-item>
+          <nz-form-label [nzSm]="9" [nzXs]="24" nzFor="nroFactura" style="text-align: left;">Número de Factura</nz-form-label>
+          <nz-form-control nzHasFeedback [nzSm]="15" [nzXs]="24" nzErrorTip="Debes ingresar el número de factura">
+            <input nz-input formControlName="nroFactura" name="nroFactura" [readonly]="true" 
+            [ngClass]="{'disabled-input': true}" />
+          </nz-form-control>
+        </nz-form-item>
+
+        <!-- Total -->
+        <nz-form-item>
+          <nz-form-label [nzSm]="9" [nzXs]="24" nzFor="total" style="text-align: left;">Total</nz-form-label>
+          <nz-form-control nzHasFeedback [nzSm]="15" [nzXs]="24" nzErrorTip="Debes ingresar el total">
+            <input 
+              nz-input 
+              formControlName="total" 
+              name="total" 
+              type="number" 
+              [readonly]="true" 
+              [ngClass]="{'disabled-input': true}" />
+          </nz-form-control>
+        </nz-form-item>
+        
+        
+
+      </form>
+    </mat-dialog-content>
+
+    <mat-dialog-actions>
+      <app-buttonstrategic mat-button [label]="'Cancelar'" [customClass]="'BotonGris'" (click)="onCancel()" class="botonmargen" [cancelar]="true"></app-buttonstrategic>
+      <app-buttonstrategic mat-button [label]="'Guardar'" [customClass]="'BotonVerde'" (click)="guardarCambios()" class="botonmargen"></app-buttonstrategic>
+    </mat-dialog-actions>
+
+  </div>
+</div>

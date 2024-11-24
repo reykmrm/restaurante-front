@@ -1,0 +1,19 @@
+@import '../../../../assets/styles/table.css';
+
+.container {
+    display: flex;
+    flex-direction: column; /* Organiza los elementos de arriba hacia abajo */
+    gap: 20px; /* Añade espacio entre los elementos */
+  }
+  
+  .divfechas {
+    align-self: flex-end; /* Alinea el selector de fechas a la derecha */
+  }
+  
+  .headerGraphi {
+    align-self: flex-start; /* Alinea la gráfica a la izquierda */
+    display: flex;
+    justify-content: flex-start; /* Alinea el gráfico a la izquierda */
+    gap: 20px; /* Puedes añadir más espacio entre elementos si agregas más */
+  }
+  

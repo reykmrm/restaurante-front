@@ -1,0 +1,37 @@
+<div class="content-container">
+  <div class="table-container">
+    <div class="divtable">
+      <h2 class="title-heading">Consumo clientes</h2>
+      <div style="display: flex; justify-content: flex-end; align-items: center; width: 100%;">
+        <div style="width: 200px;">
+          <nz-input-group [nzSuffix]="suffixIconSearch">
+            <input
+              type="number"
+              nz-input
+              placeholder="Buscar"
+              (keyup)="applyFilter($event)"
+            />
+          </nz-input-group>
+          <ng-template #suffixIconSearch>
+            <span nz-icon nzType="search"></span>
+          </ng-template>
+        </div>
+      </div>
+      
+      
+      <app-table
+        [dataSource]="dataSource"
+        [displayedColumns]="displayedColumns"
+        [enableSearch]="true"
+        [pageSize]="10"
+        [ActionEdit]="true"
+        [columnNames]="columnNames"
+        [ActionLeft]="true"
+        [verBuscar]="false"
+        [date]="[dates.FechaInicio, dates.FechaFin]"
+        (dateSelected)="handleDateSelected($event)"
+      >
+      </app-table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="content-container">
+  <div class="table-container">
+    <div class="divtable">
+      <h2 class="title-heading">Facturas</h2>
+      <app-table
+        [dataSource]="dataSource"
+        [displayedColumns]="displayedColumns"
+        [enableSearch]="true"
+        [pageSize]="10"
+        [showActions]="true"
+        [ActionEdit]="true"
+        [columnNames]="columnNames"
+        [ActionLeft]="true"
+        [ActionCreate]="true"
+        [showInputdate]="true"
+        [date]="[dates.FechaInicio, dates.FechaFin]"
+        (dateSelected)="handleDateSelected($event)"
+        (editAction)="onEditAction($event)"
+        (Create)="CreateAction()"
+        [ActionVer]="true"
+        (verAction)="onVer($event)"
+      >
+      </app-table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="content-container">
+  <div class="table-container">
+    <div class="divtable">
+      <div class="container">
+        <h2 class="title-heading">Reportes</h2>
+        <!-- Contenedor para las fechas -->
+        <div class="divfechas">
+          <nz-range-picker
+            nzMode="month"
+            [(ngModel)]="date"
+            (ngModelChange)="onChangedate($event)"
+          >
+          </nz-range-picker>
+        </div>
+
+        <!-- Contenedor para la gráfica -->
+        <div class="headerGraphi">
+          <div style="width: 250px; height: 200px">
+            <canvas
+              baseChart
+              [data]="doughnutChartData"
+              [type]="doughnutChartType"
+              [options]="doughnutChartOptions"
+            >
+            </canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

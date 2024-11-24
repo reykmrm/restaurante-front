@@ -1,0 +1,132 @@
+<div class="full-page-container">
+
+
+<mat-toolbar class="background-white-title-botton">
+  <app-buttonstrategic 
+  *ngIf="ActionCreate" 
+  mat-button 
+  [label]="'Crear'" 
+  (click)="CreateAction()" 
+  >
+</app-buttonstrategic>
+
+<app-buttonstrategic 
+  *ngIf="ActionImportGo" 
+  mat-button 
+  [label]="'Importar'"
+  (click)="onActionImportGo()" >
+</app-buttonstrategic>
+           
+
+  <span class="spacer"></span>
+
+  <div class="divfechas"> 
+  <nz-range-picker 
+  *ngIf="showInputdate" 
+  nzMode="month" 
+  [(ngModel)]="date" 
+  (ngModelChange)="onChangedate($event)">
+  </nz-range-picker>
+  </div>
+ 
+
+  <div *ngIf="verBuscar">
+    <nz-input-group [nzSuffix]="suffixIconSearch">
+      <input
+        type="text"
+        nz-input
+        placeholder="Buscar"
+        (keyup)="applyFilter($event)"
+      />
+    </nz-input-group>
+    <ng-template #suffixIconSearch>
+      <span nz-icon nzType="search"></span>
+    </ng-template>
+  </div>
+</mat-toolbar>
+
+<div class="table-container">
+<nz-table 
+  #basicTable 
+  [nzData]="dataSource" 
+  [nzPageSize]="pageSize" 
+  [nzFrontPagination]="false" 
+  [nzScroll]="{  x: '1200px', y: '340px' }" 
+>
+  <thead>
+    <tr>
+      <ng-container *ngFor="let column of columnsToDisplay">
+        <th *ngIf="column !== 'Acciones'"  nz-th>{{ getColumnDisplayName(column) }}</th>
+        <th *ngIf="column === 'Acciones'" nz-th>Acciones</th>
+      </ng-container>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let element of paginatedData">
+      <ng-container *ngFor="let column of columnsToDisplay">
+        <td *ngIf="column !== 'Acciones'" nz-td>{{ element[column] }}</td>
+        
+        <td *ngIf="column === 'Acciones'" nz-td>
+          <ng-container *ngIf="ActionExport">
+            <a (click)="onExport(element)">
+              <i nz-icon nzType="cloud-download" nzTheme="outline"></i>
+            </a>
+            <nz-divider nzType="vertical" class="invisible-divider"></nz-divider>
+          </ng-container>
+          <ng-container *ngIf="ActionImport">
+            <a (click)="onImport(element)">
+              <i nz-icon nzType="cloud-upload" nzTheme="outline"></i>
+            </a>
+            <nz-divider nzType="vertical" class="invisible-divider"></nz-divider>
+          </ng-container>
+          <ng-container *ngIf="ActionGo">
+            <a (click)="onGo(element)">
+              <i nz-icon nzType="play-circle" nzTheme="outline"></i>
+            </a>
+            <nz-divider nzType="vertical" class="invisible-divider"></nz-divider>
+          </ng-container>
+          <ng-container *ngIf="ActionView">
+            <a (click)="onGo(element)">
+              <i nz-icon nzType="eye" nzTheme="outline"></i>
+            </a>
+            <nz-divider nzType="vertical" class="invisible-divider"></nz-divider>
+          </ng-container>
+          <ng-container *ngIf="ActionEdit && (element.isEditable ? false : true)">
+            <a (click)="onEdit(element)">
+              <i nz-icon nzType="edit" nzTheme="outline"></i>
+            </a>
+          </ng-container>
+          <ng-container *ngIf="ActionDelete && (element.isEditable ? false : true)">
+            <a (click)="onDelete(element)">
+              <span nz-icon nzType="delete" nzTheme="outline"></span>
+            </a>
+          </ng-container>
+          <ng-container *ngIf="ActionVer" >
+            <a (click)="onVer(element)" >
+              <span nz-icon nzType="eye" nzTheme="outline" nz-tooltip nzTooltipTit="Ver detalles"></span>
+            </a>
+          </ng-container>
+        </td>
+      </ng-container>
+    </tr>
+  </tbody>
+</nz-table>
+</div>
+</div>
+
+<div class="paginator-container">
+<nz-pagination 
+  [nzPageSize]="pageSize"
+  [nzTotal]="dataSource.length"
+  [(nzPageIndex)]="currentPage"
+  [nzShowTotal]="totalTemplate"
+  (nzPageIndexChange)="onPageChange($event)">
+</nz-pagination>
+
+<ng-template #totalTemplate let-total>
+  Registros mostrados {{ (currentPage - 1) * pageSize + 1 }} - 
+  {{ (currentPage * pageSize) < total ? (currentPage * pageSize) : total }} 
+  de {{ total }} registros
+</ng-template>
+
+</div>

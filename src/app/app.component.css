@@ -1,0 +1,57 @@
+/* Contenedor de la barra lateral y el contenido */
+.sidenav-container {
+  height: 100%;
+}
+
+/* Estilo para la barra lateral */
+.sidenav {
+  width: 250px;
+  background-color: #fff;  /* Fondo blanco */
+  color: #333;             /* Texto oscuro */
+  border-radius: 8px;      /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Estilo para los elementos de la lista */
+mat-list-item {
+  cursor: pointer;
+  padding: 12px;
+  color: #333; /* Color de texto oscuro */
+  font-size: 16px;
+}
+
+/* Estilo para cuando el item está activo */
+mat-list-item.active {
+  background-color: #e0e0e0;  /* Fondo gris claro cuando está activo */
+  color: #000;
+}
+
+/* Estilo para el contenido */
+.content {
+  padding: 20px;
+}
+
+/* Estilos para el icono de menú (hamburguesa) */
+.mat-icon-button {
+  color: #333;
+}
+
+/* Contenedor del menú */
+.mat-sidenav {
+  background-color: #fff;
+}
+
+/* Estilo para los botones del menú */
+.mat-list-item {
+  transition: background-color 0.3s;
+}
+
+/* Transición para el hover */
+.mat-list-item:hover {
+  background-color: #f0f0f0;
+}
+
+/* Ajustes opcionales */
+mat-list {
+  padding: 0;
+}

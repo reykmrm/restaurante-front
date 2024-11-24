@@ -1,0 +1,53 @@
+
+.importdata
+{
+    margin: 20px;
+    width: 500px;
+}
+
+  /* Estilos para el contenido del diálogo */
+  
+  
+  .dialog-title {
+    font-size: 1.2em; /* Ajusta el tamaño de la fuente según sea necesario */
+    text-align: left; /* Centrar el texto */
+  }
+
+  .division-line {
+    border: none;
+    border-top: 1px solid #ccc; /* Color y estilo de la línea */
+    margin: 1px 0; /* Espacio alrededor de la línea */
+  }
+
+  .input-error {
+    border: 1px solid red;
+    background-color: #ffe6e6; /* Fondo ligeramente rojo */
+  }
+
+  .modal-fondo{
+    background: #fafbfd;
+
+  }
+
+  .readonly-input {
+    background-color: rgba(128, 128, 128, 0.316);
+    border: 0.5px solid rgba(0, 0, 0, 0.212);
+  }
+  
+  .active-input {
+    background-color: white;
+  }
+
+  nz-date-picker {
+    margin: 0 8px 12px 0;
+  }
+
+  .disabled-input {
+    background-color: #f0f0f0;  /* Gris claro para el fondo */
+    color: #000000;             /* Texto en color negro */
+    cursor: not-allowed;        /* Cambiar el cursor para indicar que no se puede editar */
+    border-color: #d9d9d9;      /* Gris para el borde */
+  }
+  
+  
+  
