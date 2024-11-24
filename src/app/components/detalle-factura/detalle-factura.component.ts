@@ -8,7 +8,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { AuxService } from '../../services/aux-service.service';
 import { VentasService } from '../../services/ventas.service';
@@ -17,6 +16,10 @@ import { CreateVentasComponent } from '../ventas/create-ventas/create-ventas.com
 import { ActivatedRoute, Router } from '@angular/router';
 import { DetalleFacturasService } from '../../services/detalle-facturas.service';
 import { CrearDetalleFacturaComponent } from './crear-detalle-factura/crear-detalle-factura.component';
+import { Location } from '@angular/common';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { AppComponent } from '../../app.component';
 
 @Component({
   selector: 'app-detalle-factura',
@@ -35,7 +38,10 @@ import { CrearDetalleFacturaComponent } from './crear-detalle-factura/crear-deta
     SharedModule,
     NzInputModule,
     NzIconModule,
+    NzButtonModule,
+    NzIconModule
   ],
+  providers: [NzInputModule]
 })
 export class DetalleFacturaComponent implements OnInit {
 
@@ -67,7 +73,8 @@ columnNames = {
     public dialog: MatDialog,
     private cdr: ChangeDetectorRef,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private location: Location
   ) {
     const currentYear = new Date().getFullYear(); // Obtiene el año actual
 
@@ -75,6 +82,10 @@ columnNames = {
       FechaInicio: `${currentYear}-01-01`, // Establece la fecha de inicio al 1 de enero del año actual
       FechaFin: `${currentYear}-12-31`     // Establece la fecha de fin al 31 de diciembre del año actual
     };
+  }
+
+  goBack() {
+    this.location.back();  // Navega a la página anterior
   }
   
   ngOnInit(): void {

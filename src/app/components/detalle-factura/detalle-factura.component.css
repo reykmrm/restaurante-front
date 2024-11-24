@@ -1,1 +1,13 @@
-@import '../../../assets/styles/table.css';
+@import "../../../assets/styles/table.css";
+
+.btnAtras {
+  border: none;
+  padding: 5px 20px;
+  margin-bottom: 10px;
+  background-color: transparent;
+}
+.icono {
+  width: 24px;
+}
+
+

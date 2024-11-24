@@ -1,0 +1,36 @@
+[debug] [2024-11-24T17:55:08.764Z] ----------------------------------------------------------------------
+[debug] [2024-11-24T17:55:08.767Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-11-24T17:55:08.767Z] CLI Version:   13.27.0
+[debug] [2024-11-24T17:55:08.767Z] Platform:      win32
+[debug] [2024-11-24T17:55:08.767Z] Node Version:  v20.17.0
+[debug] [2024-11-24T17:55:08.768Z] Time:          Sun Nov 24 2024 12:55:08 GMT-0500 (hora estándar de Colombia)
+[debug] [2024-11-24T17:55:08.768Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-11-24T17:55:08.858Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-11-24T17:55:08.858Z] > authorizing via signed-in user (emmanuelrenteriamena@gmail.com)
+[debug] [2024-11-24T17:55:08.858Z] [iam] checking project restaurante-54c8c for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-11-24T17:55:08.859Z] Checked if tokens are valid: false, expires at: 1732469183910
+[debug] [2024-11-24T17:55:08.860Z] Checked if tokens are valid: false, expires at: 1732469183910
+[debug] [2024-11-24T17:55:08.860Z] > refreshing access token with scopes: []
+[debug] [2024-11-24T17:55:08.861Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-11-24T17:55:08.861Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-11-24T17:55:09.104Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-11-24T17:55:09.104Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-11-24T17:55:09.144Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/restaurante-54c8c:testIamPermissions [none]
+[debug] [2024-11-24T17:55:09.145Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/restaurante-54c8c:testIamPermissions x-goog-quota-user=projects/restaurante-54c8c
+[debug] [2024-11-24T17:55:09.145Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/restaurante-54c8c:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-11-24T17:55:09.605Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/restaurante-54c8c:testIamPermissions 200
+[debug] [2024-11-24T17:55:09.605Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/restaurante-54c8c:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-11-24T17:55:09.605Z] Checked if tokens are valid: true, expires at: 1732474508104
+[debug] [2024-11-24T17:55:09.605Z] Checked if tokens are valid: true, expires at: 1732474508104
+[debug] [2024-11-24T17:55:09.606Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/restaurante-54c8c [none]
+[debug] [2024-11-24T17:55:10.093Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/restaurante-54c8c 200
+[debug] [2024-11-24T17:55:10.093Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/restaurante-54c8c {"projectId":"restaurante-54c8c","projectNumber":"801233331284","displayName":"restaurante","name":"projects/restaurante-54c8c","resources":{"hostingSite":"restaurante-54c8c"},"state":"ACTIVE","etag":"1_054c9d71-70d8-44eb-9e02-e5de6501a011"}
+[info] 
+[info] === Deploying to 'restaurante-54c8c'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2024-11-24T17:55:10.098Z] Checked if tokens are valid: true, expires at: 1732474508104
+[debug] [2024-11-24T17:55:10.099Z] Checked if tokens are valid: true, expires at: 1732474508104
+[debug] [2024-11-24T17:55:10.099Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/restaurante-54c8c/versions [none]
+[debug] [2024-11-24T17:55:10.099Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/restaurante-54c8c/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}

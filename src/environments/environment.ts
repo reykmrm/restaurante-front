@@ -1,7 +1,7 @@
 export const environment = {
     production: true, 
     // apiUrl: 'https://tks.iterumconnections.net/api',
-    apiUrl: 'prueba-restaurante.somee.com/api',
+    apiUrl: 'https://restaurante-production-7328.up.railway.app/api',
     firebase: {
         apiKey: "AIzaSyADks6IO7oQRGVDlsQQ-UmbB4kxXPrPabg",
         authDomain: "strategicview-ba3c4.firebaseapp.com",
